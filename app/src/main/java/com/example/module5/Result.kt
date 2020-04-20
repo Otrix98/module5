@@ -1,21 +1,18 @@
 package com.example.module5
 
-sealed class Result < out T, R> (defaultValue: T){
-   data class Success <T, R> (val x: T) : Result <T, R> (1)
-    data class Error <T, R> (val y: R): Result <T, R> (2)
+import java.lang.Error
 
-    private var item: T = defaultValue
-    fun getItem(): T{
-        return item
-    }
+sealed class Result < out T, R> {
+    data class Success<T, R> (val success : T): Result<T, R>()
+    data class Error <T, R> (val error: R): Result <T, R> ()
 }
 
-fun result (key: Int): Result <Int, String>  {
+fun result (key: Int, message: String): Result <Int, String> {
     val number: Result<Number, String>
     val any: Result<Any, String>
 
     if (key == 1) {
-        return number.getItem()
-    }
-return
+        return Result.Success(key)
+    } else return Result.Error(message)
 }
+
