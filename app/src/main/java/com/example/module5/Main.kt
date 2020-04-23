@@ -6,6 +6,9 @@ fun main() {
     val listOfInt = listOf( 1, 2, 3, 4, 5, 6)
     val listOfDouble = listOf( 1.2, 2.5, 3.3, 4.1, 5.7, 6.2)
 
+    val number: Result<Number, String> =  result(1, "message")
+    val any: Result<Any, String> = result(2, "message")
+
 
     fun <T : Number> even(list : List<T>) : List<T>{
         val filteredList = mutableListOf<T>()
@@ -20,6 +23,11 @@ fun main() {
 
 println("${even(listOfInt)}")
     println("${even(listOfDouble)}")
+
+    println(number)
+    println(any)
+
+
 
 
 }

@@ -8,8 +8,6 @@ sealed class Result < out T, R> {
 }
 
 fun result (key: Int, message: String): Result <Int, String> {
-    val number: Result<Number, String>
-    val any: Result<Any, String>
 
     if (key == 1) {
         return Result.Success(key)
