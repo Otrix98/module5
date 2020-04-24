@@ -14,4 +14,8 @@ class Queue <T> {
             return queue.removeAt(0)
         }
     }
+    fun queueFilter (filtrationType: () -> Unit): MutableList<T> {
+        return queue
+    }
+
 }

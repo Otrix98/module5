@@ -28,6 +28,8 @@ println("${even(listOfInt)}")
     println(any)
 
 
-
+    val filtrationType1 = println("filtration")
+    val queue = Queue<Int>()
+    queue.queueFilter {filtrationType1}
 
 }
